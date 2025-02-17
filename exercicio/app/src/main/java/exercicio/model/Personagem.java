@@ -2,9 +2,9 @@ package exercicio.model;
 
 public class Personagem {
     private String name;
-    private setCabeça setCabeça;
-    private setPeito setPeito;
-    private arma arma;
+    private TipoCapacete capacete;
+    private TipoArmadura armadura;
+    private TipoArma arma;
 
     public String getName() {
         return name;
@@ -14,34 +14,34 @@ public class Personagem {
         this.name = name;
     }
 
-    public setCabeça getCabeça() {
-        return setCabeça;
+    public TipoCapacete getCapacete() {
+        return capacete;
     }
 
-    public void setCabeça(setCabeça setCabeça) {
-        this.setCabeça = setCabeça;
+    public void setCapacete(TipoCapacete capacete) {
+        this.capacete = capacete;
     }
 
-    public setPeito getSetPeito() {
-        return setPeito;
+    public TipoArmadura geTipoArmadura() {
+        return armadura;
     }
 
-    public void setSetPeito(setPeito setPeito) {
-        this.setPeito = setPeito;
+    public void setTipoArmadura(TipoArmadura armadura) {
+        this.armadura = armadura;
     }
 
-    public arma getArma() {
+    public TipoArma getArma() {
         return arma;
     }
 
-    public void setArma(arma arma) {
+    public void setArma(TipoArma arma) {
         this.arma = arma;
     }
 
-    public Personagem(String name, exercicio.model.setCabeça setCabeça, exercicio.model.setPeito setPeito,exercicio.model.arma arma) {
+    public Personagem(String name,TipoCapacete capacete, TipoArmadura armadura, TipoArma arma) {
         this.name = name;
-        this.setCabeça = setCabeça;
-        this.setPeito = setPeito;
+        this.capacete = capacete;
+        this.armadura = armadura;
         this.arma = arma;
     }
 
