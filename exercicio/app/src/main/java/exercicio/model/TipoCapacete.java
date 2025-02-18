@@ -1,11 +1,12 @@
 package exercicio.model;
 
-enum capacete {
-    ELMO, VISOR, MASCARA
-}
 
 public class TipoCapacete {
-
+    
+    enum capacete {
+        ELMO, VISOR, MASCARA
+    }
+    
     private TipoCapacete capacete;
 
     public TipoCapacete getCapacete() {
@@ -22,6 +23,8 @@ public class TipoCapacete {
     }
 
     public static TipoCapacete valueOf(String capacete2) {
+    
         throw new UnsupportedOperationException("Unimplemented method 'valueOf'");
     }
+
 }

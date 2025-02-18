@@ -2,7 +2,6 @@ package exercicio;
 
 import java.util.Scanner;
 
-
 import exercicio.model.Personagem;
 import exercicio.model.TipoArma;
 import exercicio.model.TipoArmadura;
@@ -14,17 +13,48 @@ public class App {
 
         System.out.println("Digite o nome do personagem: ");
         String name = sc.next();
-        System.out.println("Digite tipo de capacete do personagem: ");
-        String capacete = sc.next();
-        TipoCapacete capac = TipoCapacete.valueOf(capacete);
-        System.out.println("Digite a armadura do personagem: ");
-        String armadura = sc.next();
-        TipoArmadura armad = TipoArmadura.valueOf(armadura);
-        System.out.println("Digite a arma do personagem: ");
-        String arma = sc.next().toUpperCase();
-        TipoArma arm = TipoArma.valueOf(arma);
 
-        Personagem prs = new Personagem(name, capac, armad, arm);
+        sc.nextLine();
+
+        TipoCapacete capac = null;
+        while (capac == null) {
+            try {
+                System.out.println("Digite tipo de capacete do personagem: ");
+                String capacete = sc.next().toUpperCase();
+                capac = TipoCapacete.valueOf(capacete);
+            } catch (IllegalArgumentException e) {
+                System.out.println("Tipo de capacete inválido. Tente novamente.");
+            }
+        }
+        sc.nextLine();
+
+        TipoArmadura armad = null;
+        while (armad == null) {
+            try {
+                System.out.println("Digite tipo de armadura do personagem: ");
+                String armadura = sc.next().toUpperCase();
+                armad = TipoArmadura.valueOf(armadura);
+            } catch (IllegalArgumentException e) {
+                System.out.println("Tipo de armadura inválido. Tente novamente.");
+            }
+        }
+        sc.nextLine();
+        TipoArma arm = null;
+        while (arm == null) {
+            try {
+                System.out.println("Digite tipo de arma do personagem: ");
+                String arma = sc.next().toUpperCase();
+                arm = TipoArma.valueOf(arma);
+            } catch (IllegalArgumentException e) {
+                System.out.println("Tipo de arma inválido. Tente novamente.");
+            }
+        }
+        sc.nextLine();
+
+        Personagem prs = new Personagem(name);
+        prs.getInventarioCapacete().adicionarCapacete(capac);
+        prs.getInventarioArmadura().adicionarArmadura(armad);
+        prs.getInventarioArma().adicionarArma(arm);
         System.out.println(prs);
 
     }

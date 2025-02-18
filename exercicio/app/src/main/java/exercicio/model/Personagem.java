@@ -1,10 +1,36 @@
 package exercicio.model;
 
 public class Personagem {
+    private InventarioArmadura inventarioArmadura;
+    private InventarioCapacete InventarioCapacete;
+    private InventarioArma inventarioArma;
     private String name;
-    private TipoCapacete capacete;
-    private TipoArmadura armadura;
-    private TipoArma arma;
+
+
+
+    public InventarioArmadura getInventarioArmadura() {
+        return inventarioArmadura;
+    }
+
+    public void setInventarioArmadura(InventarioArmadura inventarioArmadura) {
+        this.inventarioArmadura = inventarioArmadura;
+    }
+
+    public InventarioCapacete getInventarioCapacete() {
+        return InventarioCapacete;
+    }
+
+    public void setInventarioCapacete(InventarioCapacete inventarioCapacete) {
+        InventarioCapacete = inventarioCapacete;
+    }
+
+    public InventarioArma getInventarioArma() {
+        return inventarioArma;
+    }
+
+    public void setInventarioArma(InventarioArma inventarioArma) {
+        this.inventarioArma = inventarioArma;
+    }
 
     public String getName() {
         return name;
@@ -14,35 +40,11 @@ public class Personagem {
         this.name = name;
     }
 
-    public TipoCapacete getCapacete() {
-        return capacete;
-    }
-
-    public void setCapacete(TipoCapacete capacete) {
-        this.capacete = capacete;
-    }
-
-    public TipoArmadura geTipoArmadura() {
-        return armadura;
-    }
-
-    public void setTipoArmadura(TipoArmadura armadura) {
-        this.armadura = armadura;
-    }
-
-    public TipoArma getArma() {
-        return arma;
-    }
-
-    public void setArma(TipoArma arma) {
-        this.arma = arma;
-    }
-
-    public Personagem(String name,TipoCapacete capacete, TipoArmadura armadura, TipoArma arma) {
+    public Personagem(String name) {
         this.name = name;
-        this.capacete = capacete;
-        this.armadura = armadura;
-        this.arma = arma;
+        this.InventarioCapacete = new InventarioCapacete(); // inicializa o inventário de capacetes.
+        this.inventarioArmadura = new InventarioArmadura(); // inicializa o inventário de armaduras.
+        this.inventarioArma = new InventarioArma(); // inicializa o inventário de arma.
     }
 
 }
