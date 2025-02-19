@@ -1,27 +1,25 @@
 package exercicio.model;
 
-enum armadura {
-    ELMO, VISOR, MASCARA
-}
+
 
 public class TipoArmadura {
 
-    private TipoArmadura armadura;
+    private Armadura armadura;
 
-    public TipoArmadura getArmadura() {
+    public TipoArmadura(Armadura armadura) {
+        this.armadura = armadura;
+    }
+
+    public  Armadura getArmadura() {
         return armadura;
     }
 
-    public void setArmadura(TipoArmadura armadura) {
+    public void setArmadura(Armadura armadura) {
         this.armadura = armadura;
     }
 
     @Override
     public String toString() {
-        return "TipoArmadura {armadura=" + armadura + "}";
-    }
-
-    public static TipoArmadura valueOf(String armadura2) {
-        throw new UnsupportedOperationException("Unimplemented method 'valueOf'");
+        return "Tipo de Armadura = {" + armadura + "}";
     }
 }

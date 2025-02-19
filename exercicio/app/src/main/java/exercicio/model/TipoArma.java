@@ -1,28 +1,25 @@
 package exercicio.model;
 
-enum arma {
-    MONTANTE, DAIKATANA, ORBE, CRISTAL, ESPADA, KATANA
-}
 
 public class TipoArma {
 
-    private TipoArma arma;
+    private Arma arma;
 
-    public TipoArma getArma() {
+    public TipoArma(Arma arma) {
+        this.arma = arma;
+    }
+
+    public Arma getArma() {
         return arma;
     }
 
-    public void setArma(TipoArma arma) {
+    public void setArma(Arma arma) {
         this.arma = arma;
     }
 
     @Override
     public String toString() {
-        return "Arma{" +
-                "tipo=" + arma + '}'; 
-    }
-
-    public static TipoArma valueOf(String arma2) {
-        throw new UnsupportedOperationException("Unimplemented method 'valueOf'");
+        return "Arma {" +
+                "Tipo de arma = {" + arma + '}'; 
     }
 }

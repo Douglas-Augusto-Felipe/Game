@@ -3,28 +3,23 @@ package exercicio.model;
 
 public class TipoCapacete {
     
-    enum capacete {
-        ELMO, VISOR, MASCARA
-    }
     
-    private TipoCapacete capacete;
+    private Capacete capacete;
 
-    public TipoCapacete getCapacete() {
+    public Capacete getCapacete() {
         return capacete;
     }
 
-    public void setCapacete(TipoCapacete capacete) {
+    public void setTipoCapacete(Capacete capacete) {
         this.capacete = capacete;
     }
 
+    public TipoCapacete(Capacete capacete) {
+        this.capacete = capacete;
+    }
+    
     @Override
     public String toString() {
-        return "TipoCapacete {capacete=" + capacete + "}";
+        return "Tipo de Capacete =  {" + capacete + "}";
     }
-
-    public static TipoCapacete valueOf(String capacete2) {
-    
-        throw new UnsupportedOperationException("Unimplemented method 'valueOf'");
-    }
-
 }

@@ -2,6 +2,9 @@ package exercicio;
 
 import java.util.Scanner;
 
+import exercicio.model.Arma;
+import exercicio.model.Armadura;
+import exercicio.model.Capacete;
 import exercicio.model.Personagem;
 import exercicio.model.TipoArma;
 import exercicio.model.TipoArmadura;
@@ -12,7 +15,7 @@ public class App {
         Scanner sc = new Scanner(System.in);
 
         System.out.println("Digite o nome do personagem: ");
-        String name = sc.next();
+        String name = sc.next().toUpperCase();
 
         sc.nextLine();
 
@@ -21,7 +24,7 @@ public class App {
             try {
                 System.out.println("Digite tipo de capacete do personagem: ");
                 String capacete = sc.next().toUpperCase();
-                capac = TipoCapacete.valueOf(capacete);
+                capac = new TipoCapacete(Capacete.valueOf(capacete));
             } catch (IllegalArgumentException e) {
                 System.out.println("Tipo de capacete inválido. Tente novamente.");
             }
@@ -33,7 +36,7 @@ public class App {
             try {
                 System.out.println("Digite tipo de armadura do personagem: ");
                 String armadura = sc.next().toUpperCase();
-                armad = TipoArmadura.valueOf(armadura);
+                armad = new TipoArmadura(Armadura.valueOf(armadura));
             } catch (IllegalArgumentException e) {
                 System.out.println("Tipo de armadura inválido. Tente novamente.");
             }
@@ -44,18 +47,17 @@ public class App {
             try {
                 System.out.println("Digite tipo de arma do personagem: ");
                 String arma = sc.next().toUpperCase();
-                arm = TipoArma.valueOf(arma);
+                arm = new TipoArma(Arma.valueOf(arma));
             } catch (IllegalArgumentException e) {
                 System.out.println("Tipo de arma inválido. Tente novamente.");
             }
         }
         sc.nextLine();
 
-        Personagem prs = new Personagem(name);
-        prs.getInventarioCapacete().adicionarCapacete(capac);
-        prs.getInventarioArmadura().adicionarArmadura(armad);
-        prs.getInventarioArma().adicionarArma(arm);
+        Personagem prs = new Personagem(name, armad, capac, arm);
         System.out.println(prs);
+
+        sc.close();
 
     }
 }

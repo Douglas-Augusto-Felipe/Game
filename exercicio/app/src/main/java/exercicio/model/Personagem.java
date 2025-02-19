@@ -1,37 +1,13 @@
 package exercicio.model;
 
 public class Personagem {
-    private InventarioArmadura inventarioArmadura;
-    private InventarioCapacete InventarioCapacete;
-    private InventarioArma inventarioArma;
+    
     private String name;
-
-
-
-    public InventarioArmadura getInventarioArmadura() {
-        return inventarioArmadura;
-    }
-
-    public void setInventarioArmadura(InventarioArmadura inventarioArmadura) {
-        this.inventarioArmadura = inventarioArmadura;
-    }
-
-    public InventarioCapacete getInventarioCapacete() {
-        return InventarioCapacete;
-    }
-
-    public void setInventarioCapacete(InventarioCapacete inventarioCapacete) {
-        InventarioCapacete = inventarioCapacete;
-    }
-
-    public InventarioArma getInventarioArma() {
-        return inventarioArma;
-    }
-
-    public void setInventarioArma(InventarioArma inventarioArma) {
-        this.inventarioArma = inventarioArma;
-    }
-
+    private TipoArmadura TipoArmadura;
+    private TipoCapacete TipoCapacete;
+    private TipoArma TipoArma;
+    
+    
     public String getName() {
         return name;
     }
@@ -39,12 +15,43 @@ public class Personagem {
     public void setName(String name) {
         this.name = name;
     }
+    public TipoArmadura getTipoArmadura() {
+        return TipoArmadura;
+    }
+    
+    public void setTipoArmadura(TipoArmadura tipoArmadura) {
+        TipoArmadura = tipoArmadura;
+    }
+    public TipoCapacete getTipoCapacete() {
+        return TipoCapacete;
+    }
+    
+    public void setTipoCapacete(TipoCapacete tipoCapacete) {
+        TipoCapacete = tipoCapacete;
+    }
+    public TipoArma getTipoArma() {
+        return TipoArma;
+    }
 
-    public Personagem(String name) {
+    public void setTipoArma(TipoArma tipoArma) {
+        TipoArma = tipoArma;
+    }
+
+
+    public Personagem(String name,TipoArmadura Armadura, TipoCapacete Capacete, TipoArma Arma) {
         this.name = name;
-        this.InventarioCapacete = new InventarioCapacete(); // inicializa o inventário de capacetes.
-        this.inventarioArmadura = new InventarioArmadura(); // inicializa o inventário de armaduras.
-        this.inventarioArma = new InventarioArma(); // inicializa o inventário de arma.
+        this.TipoCapacete = Capacete;// inicializa o inventário de capacetes.
+        this.TipoArmadura = Armadura; // inicializa o inventário de armaduras.        
+        this.TipoArma = Arma; // inicializa o inventário de arma.
+    }
+
+    @Override
+    public String toString() {
+        return "Personagem{" +
+                "name='" + name + '\'' +
+                ", " + TipoCapacete +
+                ", " + TipoArmadura +
+                ", " + TipoArma;
     }
 
 }
