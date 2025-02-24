@@ -3,25 +3,18 @@ package exercicio.model;
 import java.util.ArrayList;
 import java.util.Scanner;
 
-import exercicio.model.Arma;
-import exercicio.model.Armadura;
-import exercicio.model.Capacete;
-import exercicio.model.Personagem;
-import exercicio.model.TipoArma;
-import exercicio.model.TipoArmadura;
-import exercicio.model.TipoCapacete;
-
 public class CriarPersonagem {
     public ArrayList<Personagem> listaPersonagems;
-    private Scanner sc;
-
+    private Scanner sc; 
+    
     public CriarPersonagem() {
         listaPersonagems = new ArrayList<>();
         sc = new Scanner(System.in);
     }
 
-    public void criarPersonagem() {
+    public Personagem criarPersonagem() {
         String name = ""; // Inicializa name para evitar erro de compilação
+        Personagem personagem = null;
         while (!name.equals("SAIR")) { // Condição de saída em maiúsculo para evitar erros
             System.out.println("Digite o nome do personagem (ou 'SAIR' para sair): ");
             name = sc.nextLine().toUpperCase(); // Lê a linha inteira, permitindo espaços no nome
@@ -61,20 +54,10 @@ public class CriarPersonagem {
                     }
                     sc.nextLine();
 
-                    Personagem personagem = new Personagem(name, armad, capac, arm);
-                    listaPersonagems.add(personagem);
+                    personagem = new Personagem(name, armad, capac, arm);
                 }
             }
-
-        }
-
-        // Método para exibir a lista de personagens
-
-        if (listaPersonagems.isEmpty()) {
-            System.out.println("Não há personagens cadastrados.");
-        } else {
-            System.out.println("Lista de personagens:");
-
+            return personagem;
         }
 
     }
