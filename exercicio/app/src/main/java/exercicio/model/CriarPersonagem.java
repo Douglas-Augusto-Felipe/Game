@@ -60,8 +60,5 @@ public class CriarPersonagem {
             }
         }
         return personagem;
-        public ArrayList<Personagem> getListaPersonagems() {
-            return listaPersonagems;
-        }
     }
 }
