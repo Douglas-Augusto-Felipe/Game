@@ -1,12 +1,13 @@
 package exercicio.model;
 
 import java.util.ArrayList;
+import java.util.List;
 import java.util.Scanner;
 
 public class CriarPersonagem {
     public ArrayList<Personagem> listaPersonagems;
-    private Scanner sc; 
-    
+    private Scanner sc;
+
     public CriarPersonagem() {
         listaPersonagems = new ArrayList<>();
         sc = new Scanner(System.in);
@@ -57,8 +58,10 @@ public class CriarPersonagem {
                     personagem = new Personagem(name, armad, capac, arm);
                 }
             }
-            return personagem;
         }
-
+        return personagem;
+        public ArrayList<Personagem> getListaPersonagems() {
+            return listaPersonagems;
+        }
     }
 }

@@ -11,6 +11,14 @@ public class ListarPersonagem {
         this.listaPersonagems = listaPersonagems;
     }
 
+    public List<Personagem> getListaPersonagems(List<Personagem> listaPersonagems) {
+        return listaPersonagems;
+    }
+
+    public void setListaPersonagems(List<Personagem> listaPersonagems) {
+        this.listaPersonagems = listaPersonagems;
+    }
+
     public void listarPersonagem() {
         if (!listaPersonagems.isEmpty()) {
             System.out.println("Nenhum personagem criado.");
