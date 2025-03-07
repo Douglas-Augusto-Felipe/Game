@@ -30,33 +30,34 @@ public class CriarPersonagem {
                     } catch (IllegalArgumentException e) {
                         System.out.println("Tipo de capacete inválido. Tente novamente.");
                     }
-
-                    TipoArmadura armad = null;
-                    while (armad == null) {
-                        try {
-                            System.out.println("Digite tipo de armadura do personagem: ");
-                            String armadura = sc.next().toUpperCase();
-                            armad = new TipoArmadura(Armadura.valueOf(armadura));
-                        } catch (IllegalArgumentException e) {
-                            System.out.println("Tipo de armadura inválido. Tente novamente.");
-                        }
-                    }
-                    sc.nextLine();
-
-                    TipoArma arm = null;
-                    while (arm == null) {
-                        try {
-                            System.out.println("Digite tipo de arma do personagem: ");
-                            String arma = sc.next().toUpperCase();
-                            arm = new TipoArma(Arma.valueOf(arma));
-                        } catch (IllegalArgumentException e) {
-                            System.out.println("Tipo de arma inválido. Tente novamente.");
-                        }
-                    }
-                    sc.nextLine();
-                    personagem = new Personagem(name, armad, capac, arm);
-                    listaPersonagems.add(personagem);
                 }
+                sc.nextLine();
+
+                TipoArmadura armad = null;
+                while (armad == null) {
+                    try {
+                        System.out.println("Digite tipo de armadura do personagem: ");
+                        String armadura = sc.next().toUpperCase();
+                        armad = new TipoArmadura(Armadura.valueOf(armadura));
+                    } catch (IllegalArgumentException e) {
+                        System.out.println("Tipo de armadura inválido. Tente novamente.");
+                    }
+                }
+                sc.nextLine();
+
+                TipoArma arm = null;
+                while (arm == null) {
+                    try {
+                        System.out.println("Digite tipo de arma do personagem: ");
+                        String arma = sc.next().toUpperCase();
+                        arm = new TipoArma(Arma.valueOf(arma));
+                    } catch (IllegalArgumentException e) {
+                        System.out.println("Tipo de arma inválido. Tente novamente.");
+                    }
+                }
+                sc.nextLine();
+                personagem = new Personagem(name, armad, capac, arm);
+                listaPersonagems.add(personagem);
             }
         }
         return listaPersonagems;
