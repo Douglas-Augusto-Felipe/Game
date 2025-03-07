@@ -2,8 +2,6 @@ package exercicio.model;
 
 import java.util.List;
 
-import org.checkerframework.checker.units.qual.s;
-
 public class ListarPersonagem {
     private List<Personagem> listaPersonagems;
 
@@ -18,7 +16,6 @@ public class ListarPersonagem {
     public void setListaPersonagems(List<Personagem> listaPersonagems) {
         this.listaPersonagems = listaPersonagems;
     }
-
     public void listarPersonagem() {
         if (!listaPersonagems.isEmpty()) {
             System.out.println("Nenhum personagem criado.");
@@ -28,6 +25,5 @@ public class ListarPersonagem {
                 System.out.println(personagem);
             }
         }
-
     }
 }

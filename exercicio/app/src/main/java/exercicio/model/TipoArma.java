@@ -19,7 +19,6 @@ public class TipoArma {
 
     @Override
     public String toString() {
-        return "Arma {" +
-                "Tipo de arma = {" + arma + '}'; 
+        return "Arma {" + arma + "}"; 
     }
 }

@@ -9,11 +9,11 @@ public class CriarPersonagem {
     private Scanner sc;
 
     public CriarPersonagem() {
-        listaPersonagems = new ArrayList<>();
         sc = new Scanner(System.in);
+        listaPersonagems = new ArrayList<>();
     }
 
-    public Personagem criarPersonagem() {
+    public List<Personagem> criarPersonagem() {
         String name = ""; // Inicializa name para evitar erro de compilação
         Personagem personagem = null;
         while (!name.equals("SAIR")) { // Condição de saída em maiúsculo para evitar erros
@@ -54,11 +54,11 @@ public class CriarPersonagem {
                         }
                     }
                     sc.nextLine();
-
                     personagem = new Personagem(name, armad, capac, arm);
+                    listaPersonagems.add(personagem);
                 }
             }
         }
-        return personagem;
+        return listaPersonagems;
     }
 }
